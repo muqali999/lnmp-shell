@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="curl-8.12.1"
+softwareName="curl-8.17.0"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://curl.se/download/curl-8.12.1.tar.gz"
+downloadUrl="https://curl.se/download/curl-8.17.0.tar.gz"
 #安装路径
 targetPath="/usr/local"
 
@@ -27,7 +27,7 @@ printf " $softwareName Install	    \n"
 printf "======================================\n"
 printf "\n"
 
-if [ ! -s src ]; then    
+if [ ! -s src ]; then
     printf "Error: directory src not found.\n"
     exit 1
 fi

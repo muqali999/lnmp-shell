@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="libpng-1.6.46"
+softwareName="libpng-1.6.53"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://sourceforge.net/projects/libpng/files/libpng16/1.6.46/libpng-1.6.46.tar.gz"
+downloadUrl="https://sourceforge.net/projects/libpng/files/libpng16/1.6.46/libpng-1.6.53.tar.gz"
 #安装路径
 targetPath="/usr/local"
 
@@ -27,7 +27,7 @@ printf " $softwareName Install	    \n"
 printf "======================================\n"
 printf "\n"
 
-if [ ! -s src ]; then    
+if [ ! -s src ]; then
     printf "Error: directory src not found.\n"
     exit 1
 fi
