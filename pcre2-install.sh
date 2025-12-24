@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="pcre2-10.45"
+softwareName="pcre2-10.47"
 #软件后缀名
 softwareSuffix=".tar.bz2"
 
 #下载网址
-downloadUrl="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.45/pcre2-10.45.tar.bz2"
+downloadUrl="https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.47/pcre2-10.47.tar.bz2"
 #安装路径
 targetPath="/usr/local"
 
