@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="nginx-1.26.3"
+softwareName="nginx-1.28.0"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://nginx.org/download/nginx-1.26.3.tar.gz"
+downloadUrl="https://nginx.org/download/nginx-1.28.0.tar.gz"
 
 #校验文件
 verifiedFilePath="/usr/local/nginx/sbin/nginx"
@@ -25,7 +25,7 @@ printf " $softwareName Install	    \n"
 printf "======================================\n"
 printf "\n"
 
-if [ ! -s src ]; then    
+if [ ! -s src ]; then
     printf "Error: directory src not found.\n"
     exit 1
 fi
@@ -86,7 +86,7 @@ printf "\n========= source package download completed =========\n\n"
 printf "========= $softwareName install start... =========\n\n"
 
 cd $softwareName
-./configure --prefix=/usr/local/nginx --user=www --group=www --without-http_memcached_module --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_dav_module --with-file-aio --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-http_addition_module --with-http_realip_module --with-http_image_filter_module --with-http_mp4_module --with-stream --with-stream_ssl_module --with-ld-opt="-ljemalloc" --with-pcre=../pcre2-10.45 --with-zlib=../zlib-1.3.1
+./configure --prefix=/usr/local/nginx --user=www --group=www --without-http_memcached_module --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_dav_module --with-file-aio --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-http_addition_module --with-http_realip_module --with-http_image_filter_module --with-http_mp4_module --with-stream --with-stream_ssl_module --with-ld-opt="-ljemalloc" --with-pcre=../pcre2-10.47 --with-zlib=../zlib-1.3.1
 make
 make install
 cd -
@@ -100,19 +100,9 @@ mkdir -p /usr/local/nginx/domains
 mkdir -p /usr/local/nginx/ssl
 
 mv ../nginx.service.txt /etc/systemd/system/nginx.service
-
-systemctl enable nginx.service
-systemctl status nginx.service
-systemctl start nginx.service
-
 cd -
 
-ps aux | grep nginx | grep -v "grep"
-lsof -n | grep jemalloc | grep -v "sh"
-
-printf "check Nginx whether to enable startup\n"
-systemctl is-enabled nginx.service
-
+#重新生成配置文件
 mv /usr/local/nginx/conf/nginx.conf /usr/local/nginx/conf/nginx.conf.bak
 
 cat >/usr/local/nginx/conf/nginx.conf<<EOF
@@ -137,36 +127,36 @@ http {
 	log_format  main  '\$remote_addr - \$remote_user [\$time_local] "\$request" '
 					  '\$status \$body_bytes_sent "\$http_referer" '
 					  '"\$http_user_agent" "\$http_x_forwarded_for"';
-	
+
 	#access_log  /data/www/logs/nginx/access.log  main;
 	#error_log  /data/www/logs/nginx/error.log  crit;
 
-	access_log off;	
+	access_log off;
 	error_log  /data/www/logs/nginx/error.log  warn;
 
 	sendfile       on;
-	tcp_nopush     on;	
+	tcp_nopush     on;
 	tcp_nodelay    on;
 	server_tokens  off;
-	
+
 	keepalive_timeout  30;
 	client_header_timeout  10;
 	client_body_timeout  30;
 	reset_timedout_connection  on;
 	send_timeout  30;
-	
-	server_names_hash_bucket_size 128; 
-	client_header_buffer_size 8k;	
+
+	server_names_hash_bucket_size 128;
+	client_header_buffer_size 8k;
 	large_client_header_buffers 8 4k;
 	client_max_body_size 8m;
 
 	gzip  on;
 	gzip_disable  "msie6";
-	gzip_min_length  1k;	
+	gzip_min_length  1k;
 	gzip_comp_level 2;
 	gzip_proxied  any;
-	gzip_buffers  4  16k; 
-	gzip_http_version  1.1;	
+	gzip_buffers  4  16k;
+	gzip_http_version  1.1;
 	gzip_types  text/plain text/css text/javascript application/x-javascript;
 	gzip_vary  on;
 
@@ -196,13 +186,13 @@ http {
 		}
 
 		location ~ .*\.(gif|jpg|jpeg|png|bmp|swf)\$ {
-			expires 30d; 
-		} 
+			expires 30d;
+		}
 		location ~ .*\.(js|css)?\$ {
-			expires 1h; 
+			expires 1h;
 		}
 		location ~ .*\.html\$ {
-			expires 24h; 
+			expires 24h;
 		}
 
 		#error_page  403  /errors/403.html;
@@ -215,11 +205,21 @@ http {
 		#access_log  /data/www/logs/nginx/mydomain_access.log  main buffer=16k;
 		#error_log  /data/www/logs/nginx/mydomain_error.log  warn;
 	}
-	
+
 	#VirtualHost
 	#include /usr/local/nginx/domains/*.conf;
 }
 EOF
+
+systemctl status nginx.service
+systemctl start nginx.service
+
+ps aux | grep nginx | grep -v "grep"
+lsof -n | grep jemalloc | grep -v "sh"
+
+systemctl enable nginx.service
+printf "check Nginx whether to enable startup\n"
+systemctl is-enabled nginx.service
 
 #更改Nginx配置文件线程数
 cat /proc/cpuinfo | grep "cpu cores" | wc -l
