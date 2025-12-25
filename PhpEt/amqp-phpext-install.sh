@@ -58,13 +58,13 @@ printf "\n========= source package download completed =========\n\n"
 
 printf "========= $softwareName php extension install start... =========\n\n"
 
-export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig"
+#export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig"
 #export PKG_CONFIG_PATH="/usr/lib64/pkgconfig"
 
 cd $softwareName
 
-export PHP_AUTOCONF="/usr/local/bin/autoconf"
-export PHP_AUTOHEADER="/usr/local/bin/autoheader"
+#export PHP_AUTOCONF="/usr/local/bin/autoconf"
+#export PHP_AUTOHEADER="/usr/local/bin/autoheader"
 
 /usr/local/php/bin/phpize
 ./configure --with-php-config=/usr/local/php/bin/php-config

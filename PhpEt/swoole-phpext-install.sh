@@ -60,8 +60,8 @@ printf "========= $softwareName php extension install start... =========\n\n"
 
 cd $softwareName
 
-export PHP_AUTOCONF="/usr/local/bin/autoconf"
-export PHP_AUTOHEADER="/usr/local/bin/autoheader"
+#export PHP_AUTOCONF="/usr/local/bin/autoconf"
+#export PHP_AUTOHEADER="/usr/local/bin/autoheader"
 /usr/local/php/bin/phpize
 ./configure --enable-openssl --enable-http2 --with-php-config=/usr/local/php/bin/php-config
 make
