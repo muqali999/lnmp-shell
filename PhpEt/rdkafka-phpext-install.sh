@@ -12,7 +12,7 @@ printf " Redis php extension Install      \n"
 printf "==================================\n"
 printf "\n\n"
 
-if [ ! -s src ]; then    
+if [ ! -s src ]; then
     printf "Error: directory src not found.\n"
     exit 1
 fi
@@ -63,7 +63,7 @@ cd $softwareName
 export PHP_AUTOCONF="/usr/local/bin/autoconf"
 export PHP_AUTOHEADER="/usr/local/bin/autoheader"
 /usr/local/php/bin/phpize
-./configure --with-php-config=/usr/local/php/bin/php-config
+./configure --with-php-config=/usr/local/php/bin/php-config --with-rdkafka=/usr/local
 make
 #make test
 make install

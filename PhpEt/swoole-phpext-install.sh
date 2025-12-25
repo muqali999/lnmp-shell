@@ -12,7 +12,7 @@ printf " Redis php extension Install      \n"
 printf "==================================\n"
 printf "\n\n"
 
-if [ ! -s src ]; then    
+if [ ! -s src ]; then
     printf "Error: directory src not found.\n"
     exit 1
 fi
@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="swoole-6.0.1"
+softwareName="swoole-6.1.5"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="swoole.so"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/swoole-6.0.1.tgz"
+downloadUrl="https://pecl.php.net/get/swoole-6.1.5.tgz"
 
 
 #检测PHP是否已安装

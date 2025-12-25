@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="mongodb-1.20.1"
+softwareName="mongodb-2.1.4"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="mongodb"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/mongodb-1.20.1.tgz"
+downloadUrl="https://pecl.php.net/get/mongodb-2.1.4.tgz"
 
 
 #检测PHP是否已安装

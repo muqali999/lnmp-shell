@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="mcrypt-1.0.6"
+softwareName="mcrypt-1.0.9"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="mcrypt"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/mcrypt-1.0.6.tgz"
+downloadUrl="https://pecl.php.net/get/mcrypt-1.0.9.tgz"
 
 
 #检测PHP是否已安装

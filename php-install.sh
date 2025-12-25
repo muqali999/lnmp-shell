@@ -27,7 +27,7 @@ printf " $softwareName Install	    \n"
 printf "======================================\n"
 printf "\n"
 
-if [ ! -s websrc ]; then    
+if [ ! -s websrc ]; then
     printf "Error: directory websrc not found.\n"
     exit 1
 fi
@@ -61,17 +61,16 @@ printf "\n========= source package download completed =========\n\n"
 printf "========= $softwareName install start... =========\n\n"
 
 #安装依懒软件包
-dnf -y install libsqlite3x-devel librabbitmq librabbitmq-tools
+apt -y install librabbitmq4 librabbitmq-dev
 
 ldconfig
-#centos 8.x
-#export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig"
+
 
 #centos 7.x
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
-if [ ! -s /usr/local/lib/pkgconfig/libzip.pc ]; then
-	ln -s /usr/local/lib64/pkgconfig/libzip.pc /usr/local/lib/pkgconfig/libzip.pc
-fi
+#if [ ! -s /usr/local/lib/pkgconfig/libzip.pc ]; then
+#	ln -s /usr/local/lib64/pkgconfig/libzip.pc /usr/local/lib/pkgconfig/libzip.pc
+#fi
 
 cd $softwareName
 ./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-iconv --with-curl --with-openssl --with-zlib --with-bz2 --with-zip --with-gettext --with-ldap --with-ldap-sasl --with-xsl --without-pear --enable-gd --enable-exif --enable-mbstring --enable-bcmath --enable-shmop --enable-sockets --enable-soap --enable-sysvsem --enable-sysvshm --enable-fpm --enable-pcntl --enable-calendar

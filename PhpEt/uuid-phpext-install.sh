@@ -12,7 +12,7 @@ printf " Redis php extension Install      \n"
 printf "==================================\n"
 printf "\n\n"
 
-if [ ! -s src ]; then    
+if [ ! -s src ]; then
     printf "Error: directory src not found.\n"
     exit 1
 fi
@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="uuid-1.2.1"
+softwareName="uuid-1.3.0"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="yaml.so"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/uuid-1.2.1.tgz"
+downloadUrl="https://pecl.php.net/get/uuid-1.3.0.tgz"
 
 
 #检测PHP是否已安装

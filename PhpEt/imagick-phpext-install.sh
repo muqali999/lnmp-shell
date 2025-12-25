@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="imagick-3.7.0"
+softwareName="imagick-3.8.1"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="imagick"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/imagick-3.7.0.tgz"
+downloadUrl="https://pecl.php.net/get/imagick-3.8.1.tgz"
 
 
 #检测PHP是否已安装
