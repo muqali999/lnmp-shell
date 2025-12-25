@@ -61,8 +61,7 @@ printf "\n========= source package download completed =========\n\n"
 printf "========= $softwareName install start... =========\n\n"
 
 #安装依懒软件包
-apt -y install librabbitmq4 librabbitmq-dev
-
+apt -y install libsqlite3-dev libonig-dev libsasl2-dev
 ldconfig
 
 
