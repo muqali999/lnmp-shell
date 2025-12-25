@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="mariadb-10.11.11"
+softwareName="mariadb-10.11.15"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://mirrors.xtom.com.hk/mariadb/mariadb-10.11.11/source/mariadb-10.11.11.tar.gz"
+downloadUrl="https://mirrors.xtom.com.hk/mariadb/mariadb-10.11.15/source/mariadb-10.11.15.tar.gz"
 #安装路径
 targetPath="/usr/local/mysql"
 
@@ -27,8 +27,8 @@ printf " $softwareName Install	    \n"
 printf "======================================\n"
 printf "\n"
 
-if [ ! -s websrc ]; then
-    printf "Error: directory websrc not found.\n"
+if [ ! -s src ]; then
+    printf "Error: directory src not found.\n"
     exit 1
 fi
 
@@ -41,10 +41,10 @@ if [ -s $verifiedFilePath ]; then
 fi
 
 #检测依赖软件jemalloc
-if [ ! -s /usr/local/lib/libjemalloc.so ]; then
-	printf "Error: jemalloc is not installed!\n"
-	exit 1
-fi
+#if [ ! -s /usr/local/lib/libjemalloc.so ]; then
+#	printf "Error: jemalloc is not installed!\n"
+#	exit 1
+#fi
 
 #新建用户目录
 groupadd mysql
@@ -62,7 +62,7 @@ fi
 #dnf -y install libtirpc ncurses ncurses-devel
 #dnf -y install devtoolset-10
 
-cd websrc
+cd src
 
 printf "\n========= source package download start =========\n\n"
 
