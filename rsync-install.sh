@@ -27,13 +27,13 @@ printf " $softwareName Install	    \n"
 printf "======================================\n"
 printf "\n"
 
-if [ ! -s websrc ]; then    
-    printf "Error: directory websrc not found.\n"
+if [ ! -s src ]; then    
+    printf "Error: directory src not found.\n"
     exit 1
 fi
 
 #删除yum安装过的软件旧版本
-#yum -y remove rsync
+#apt -y remove rsync
 
 softwareFullName=$softwareName$softwareSuffix
 
@@ -44,11 +44,10 @@ if [ -s $verifiedFilePath ]; then
 fi
 
 #安装依赖软件包
-#yum -y install libzstd libzstd-devel
-yum -y install xxhash xxhash-libs
-yum -y install lz4 lz4-devel
+apt install libxxhash0 xxhash libxxhash-dev
+apt -y install lz4 liblz4-1 liblz4-dev
 
-cd websrc
+cd src
 
 printf "\n========= source package download start =========\n\n"
 

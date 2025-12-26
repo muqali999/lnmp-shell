@@ -9,7 +9,7 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="redis-7.4.2"
+softwareName="redis-7.4.7"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
@@ -69,7 +69,7 @@ printf "\n========= source package download completed =========\n\n"
 
 printf "========= $softwareName install start... =========\n\n"
 
-yum -y install tcl
+apt -y install tcl tcl-dev
 
 cd $softwareName
 #./configure --prefix=$targetPath
