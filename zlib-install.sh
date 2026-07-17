@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="zlib-1.3.1"
+softwareName="zlib-1.3.2"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://www.zlib.net/zlib-1.3.1.tar.gz"
+downloadUrl="https://www.zlib.net/zlib-1.3.2.tar.gz"
 #安装路径
 targetPath="/usr/local"
 

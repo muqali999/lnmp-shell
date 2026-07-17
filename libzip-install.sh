@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="libzip-1.11.3"
+softwareName="libzip-1.11.4"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://libzip.org/download/libzip-1.11.3.tar.gz"
+downloadUrl="https://libzip.org/download/libzip-1.11.4.tar.gz"
 #安装路径
 targetPath="/usr/local"
 
