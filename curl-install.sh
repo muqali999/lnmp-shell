@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="curl-8.17.0"
+softwareName="curl-8.21.0"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://curl.se/download/curl-8.17.0.tar.gz"
+downloadUrl="https://curl.se/download/curl-8.21.0.tar.gz"
 #安装路径
 targetPath="/usr/local"
 

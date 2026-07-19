@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="jpegsrc.v9f"
+softwareName="jpegsrc.v10"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="http://www.ijg.org/files/jpegsrc.v9f.tar.gz"
+downloadUrl="http://www.ijg.org/files/jpegsrc.v10.tar.gz"
 #安装路径
 targetPath="/usr/local"
 
@@ -60,7 +60,7 @@ printf "\n========= source package download completed =========\n\n"
 
 printf "========= $softwareName install start... =========\n\n"
 
-cd jpeg-9f
+cd jpeg-10
 ./configure --prefix=$targetPath
 make
 

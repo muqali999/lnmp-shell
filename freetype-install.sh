@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="freetype-2.14.1"
+softwareName="freetype-2.14.3"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="http://download.savannah.gnu.org/releases/freetype/freetype-2.14.1.tar.gz"
+downloadUrl="http://download.savannah.gnu.org/releases/freetype/freetype-2.14.3.tar.gz"
 #安装路径
 targetPath="/usr/local"
 

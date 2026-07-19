@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="libpng-1.6.53"
+softwareName="libpng-1.6.58"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://sourceforge.net/projects/libpng/files/libpng16/1.6.46/libpng-1.6.53.tar.gz"
+downloadUrl="https://sourceforge.net/projects/libpng/files/libpng16/1.6.58/libpng-1.6.58.tar.gz"
 #安装路径
 targetPath="/usr/local"
 

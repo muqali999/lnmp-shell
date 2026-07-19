@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="php-8.4.4"
+softwareName="php-8.5.8"
 #软件后缀名
 softwareSuffix=".tar.bz2"
 
 #下载网址
-downloadUrl="https://www.php.net/distributions/php-8.4.4.tar.bz2"
+downloadUrl="https://www.php.net/distributions/php-8.5.8.tar.bz2"
 #安装路径
 targetPath="/usr/local"
 
@@ -72,7 +72,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 #fi
 
 cd $softwareName
-./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-iconv --with-curl --with-openssl --with-zlib --with-bz2 --with-zip --with-gettext --with-ldap --with-ldap-sasl --with-xsl --without-pear --enable-gd --enable-exif --enable-mbstring --enable-bcmath --enable-shmop --enable-sockets --enable-soap --enable-sysvsem --enable-sysvshm --enable-fpm --enable-pcntl --enable-calendar
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-pgsql --with-pdo-pgsql --with-pdo-sqlite --with-iconv --with-curl --with-openssl --with-zlib --with-bz2 --with-zip --with-gettext --with-ldap --with-ldap-sasl --with-xsl --without-pear --enable-gd --enable-exif --enable-mbstring --enable-bcmath --enable-shmop --enable-sockets --enable-ipv6 --enable-soap --enable-sysvsem --enable-sysvshm --enable-fpm --enable-pcntl --enable-calendar --enable-zts
 make -j 4
 make install
 cd -
