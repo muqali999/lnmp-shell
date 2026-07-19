@@ -72,7 +72,7 @@ export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
 #fi
 
 cd $softwareName
-./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-pgsql --with-pdo-pgsql --with-pdo-sqlite --with-iconv --with-curl --with-openssl --with-zlib --with-bz2 --with-zip --with-gettext --with-ldap --with-ldap-sasl --with-xsl --without-pear --enable-gd --enable-exif --enable-mbstring --enable-bcmath --enable-shmop --enable-sockets --enable-ipv6 --enable-soap --enable-sysvsem --enable-sysvshm --enable-fpm --enable-pcntl --enable-calendar --enable-zts
+./configure --prefix=/usr/local/php --with-config-file-path=/usr/local/php/etc --enable-fpm --with-fpm-systemd --with-fpm-acl --enable-cgi --with-pcre-jit --enable-mysqlnd --with-mysqli=mysqlnd --with-pdo-mysql=mysqlnd --with-pgsql --with-pdo-pgsql --with-pdo-sqlite --enable-gd --with-external-gd=/usr/local --with-freetype=/usr/local --with-jpeg=/usr/local --with-webp --with-avif --enable-gd-jis-conv --with-xpm --with-zlib --with-bz2 --with-zip --with-openssl --with-sodium --with-password-argon2 --enable-bcmath --with-curl --enable-sockets --enable-soap --with-ldap --with-ldap-sasl --enable-ipv6 --with-iconv --enable-mbstring --with-gettext --enable-intl --enable-calendar --enable-fileinfo --enable-exif --with-xsl --with-tidy --with-ffi --enable-zts --enable-pcntl --enable-posix --enable-shmop --enable-sysvmsg --enable-sysvsem --enable-sysvshm --without-pear --disable-debug --disable-rpath --enable-shared=yes --with-pic
 make -j 4
 make install
 cd -
