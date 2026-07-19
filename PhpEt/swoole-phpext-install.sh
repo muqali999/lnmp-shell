@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="swoole-6.1.5"
+softwareName="swoole-6.2.2"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="swoole.so"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/swoole-6.1.5.tgz"
+downloadUrl="https://pecl.php.net/get/swoole-6.2.2.tgz"
 
 
 #检测PHP是否已安装

@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="amqp-2.1.2"
+softwareName="amqp-2.2.0"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
 extModuleName="amqp"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/amqp-2.1.2.tgz"
+downloadUrl="https://pecl.php.net/get/amqp-2.2.0.tgz"
 
 
 #检测PHP是否已安装

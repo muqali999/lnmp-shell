@@ -9,17 +9,17 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="rabbitmq-c-0.17.0"
+softwareName="librdkafka-2.15.0"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://github.com/alanxz/rabbitmq-c/archive/refs/tags/v0.17.0.tar.gz"
+downloadUrl="https://github.com/confluentinc/librdkafka/archive/refs/tags/v2.15.0.tar.gz"
 #安装路径
 targetPath="/usr/local"
 
 #校验文件
-verifiedFilePath="/usr/local/lib64/librabbitmq.so"
+verifiedFilePath="/usr/local/lib/librdkafka.so"
 
 printf "\n"
 printf "======================================\n"
@@ -48,7 +48,7 @@ if [ -s $softwareFullName ]; then
     echo "$softwareFullName [found]"
 else
     echo "$softwareFullName are downloading now..."
-    wget $downloadUrl
+    wget -O $softwareFullName $downloadUrl
 fi
 
 if [ -s $softwareName ]; then
@@ -61,18 +61,13 @@ printf "\n========= source package download completed =========\n\n"
 printf "========= $softwareName install start... =========\n\n"
 
 cd $softwareName
-
-mkdir build
-cd build
-
-cmake -DCMAKE_INSTALL_PREFIX=$targetPath ..
+./configure --prefix=$targetPath
 make
 
 printf "$softwareName compile success!\n"
 exit 1
 
 make install
-cd -
 cd -
 
 if [ ! -s $verifiedFilePath ]; then
@@ -81,8 +76,6 @@ if [ ! -s $verifiedFilePath ]; then
 fi
 
 cd -
-
-export PKG_CONFIG_PATH="/usr/local/lib64/pkgconfig"
 
 printf "\n========== $softwareName install end =============\n\n"
 
