@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="nginx-1.28.0"
+softwareName="nginx-1.30.4"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://nginx.org/download/nginx-1.28.0.tar.gz"
+downloadUrl="https://nginx.org/download/nginx-1.30.4.tar.gz"
 
 #校验文件
 verifiedFilePath="/usr/local/nginx/sbin/nginx"
@@ -86,7 +86,7 @@ printf "\n========= source package download completed =========\n\n"
 printf "========= $softwareName install start... =========\n\n"
 
 cd $softwareName
-./configure --prefix=/usr/local/nginx --user=www --group=www --without-http_memcached_module --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_dav_module --with-file-aio --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-http_addition_module --with-http_realip_module --with-http_image_filter_module --with-http_mp4_module --with-stream --with-stream_ssl_module --with-ld-opt="-ljemalloc" --with-pcre=../pcre2-10.47 --with-zlib=../zlib-1.3.1
+./configure --prefix=/usr/local/nginx --user=www --group=www --without-http_memcached_module --with-http_stub_status_module --with-http_ssl_module --with-http_v2_module --with-http_dav_module --with-file-aio --with-http_gunzip_module --with-http_gzip_static_module --with-http_sub_module --with-http_addition_module --with-http_realip_module --with-http_image_filter_module --with-http_mp4_module --with-stream --with-stream_ssl_module --with-ld-opt="-ljemalloc" --with-pcre=../pcre2-10.47 --with-zlib=../zlib-1.3.2
 make
 make install
 cd -

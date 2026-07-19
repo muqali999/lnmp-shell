@@ -9,12 +9,12 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="rsync-3.4.1"
+softwareName="rsync-3.4.4"
 #软件后缀名
 softwareSuffix=".tar.gz"
 
 #下载网址
-downloadUrl="https://download.samba.org/pub/rsync/rsync-3.4.1.tar.gz"
+downloadUrl="https://download.samba.org/pub/rsync/rsync-3.4.4.tar.gz"
 #安装路径
 targetPath="/usr/local/rsync"
 

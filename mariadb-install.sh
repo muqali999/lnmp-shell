@@ -83,7 +83,7 @@ printf "\n========= source package download completed =========\n\n"
 printf "========= $softwareName install start... =========\n\n"
 
 cd $softwareName
-cmake . -DCMAKE_INSTALL_PREFIX=$targetPath -DMYSQL_DATADIR=/data/database/mysql -DSYSCONFDIR=/etc -DMYSQL_UNIX_ADDR=/usr/local/mysql/run/mysql.sock -DMYSQL_TCP_PORT=3306 -DDEFAULT_CHARSET=utf8mb4 -DDEFAULT_COLLATION=utf8mb4_general_ci -DWITH_EXTRA_CHARSETS=all -DWITH_SSL=system -DENABLED_LOCAL_INFILE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DWITH_TOKUDB_STORAGE_ENGINE=1 -DWITH_SPIDER_STORAGE_ENGINE=1 -DENABLE_ASSEMBLER=1 -DWITH_BIG_TABLES=1 -DWITH_PLUGIN_ARIA=1 -DWITH_ARIA_TMP_TABLES=1 -DENABLE_THREAD_SAFE_CLIENT=1 -DWITH_READLINE=1 -DWITH_DEBUG=0 -DCMAKE_EXE_LINKER_FLAGS='-ljemalloc' -DFORCE_INSOURCE_BUILD=1
+cmake . -DCMAKE_INSTALL_PREFIX=$targetPath -DMYSQL_DATADIR=/data/database/mysql -DSYSCONFDIR=/etc -DMYSQL_UNIX_ADDR=/usr/local/mysql/run/mysql.sock -DMYSQL_TCP_PORT=3306 -DDEFAULT_CHARSET=utf8mb4 -DDEFAULT_COLLATION=utf8mb4_general_ci -DWITH_EXTRA_CHARSETS=all -DWITH_SSL=system -DENABLED_LOCAL_INFILE=1 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DWITH_MYISAM_STORAGE_ENGINE=1 -DENABLE_ASSEMBLER=1 -DWITH_BIG_TABLES=1 -DWITH_PLUGIN_ARIA=1 -DWITH_ARIA_TMP_TABLES=1 -DENABLE_THREAD_SAFE_CLIENT=1 -DWITH_READLINE=1 -DWITH_DEBUG=0 -DCMAKE_EXE_LINKER_FLAGS='-ljemalloc' -DFORCE_INSOURCE_BUILD=1
 make -j 4
 
 printf "$softwareName compile success!\n"
@@ -168,7 +168,7 @@ EOF
 
 cd /usr/local/mysql
 
-chown mysql.mysql -R run
+chown mysql:mysql -R run
 
 #start mysql
 ./bin/mysqld --initialize-insecure --user=mysql --basedir=/usr/local/mysql --datadir=/data/database/mysql
