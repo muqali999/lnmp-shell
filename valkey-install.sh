@@ -57,8 +57,7 @@ if [ -s $softwareFullName ]; then
     echo "$softwareFullName [found]"
 else
     echo "$softwareFullName are downloading now..."
-    wget $downloadUrl
-	mv 9.1.0.tar.gz valkey-9.1.0.tar.gz
+    wget -O $softwareFullName $downloadUrl
 fi
 
 if [ -s $softwareName ]; then
