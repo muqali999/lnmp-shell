@@ -20,14 +20,14 @@ fi
 # 定义软件名称和下载网址
 
 #名称
-softwareName="redis-6.3.0"
+softwareName="igbinary-3.2.17RC1"
 #软件后缀名
 softwareSuffix=".tgz"
 #扩展模块名称
-extModuleName="redis.so"
+extModuleName="igbinary.so"
 
 #下载网址
-downloadUrl="https://pecl.php.net/get/redis-6.3.0.tgz"
+downloadUrl="https://pecl.php.net/get/igbinary-3.2.17RC1.tgz"
 
 
 #检测PHP是否已安装
@@ -63,7 +63,7 @@ cd $softwareName
 #export PHP_AUTOCONF="/usr/local/bin/autoconf"
 #export PHP_AUTOHEADER="/usr/local/bin/autoheader"
 /usr/local/php/bin/phpize
-./configure --with-php-config=/usr/local/php/bin/php-config --enable-redis-igbinary
+./configure --with-php-config=/usr/local/php/bin/php-config
 make
 #make test
 make install
@@ -72,9 +72,9 @@ cd -
 printf "$softwareName installation success!\n"
 exit 1
 
-#isExists=`grep 'extension = "$extModuleName"' /usr/local/php/etc/php.ini | grep -v ";" | wc -l`
+#isExists=`grep 'extension = "$extModuleName.so"' /usr/local/php/etc/php.ini | grep -v ";" | wc -l`
 #if [ "$isExists" != "1" ]; then
-#    sed -i '/;extension_dir = "ext"/ a\extension = "$extModuleName"' /usr/local/php/etc/php.ini
+#    sed -i '/;extension_dir = "ext"/ a\extension = "$extModuleName.so"' /usr/local/php/etc/php.ini
 #fi
 
 systemctl restart php-fpm.service
@@ -82,6 +82,6 @@ cd -
 
 printf "\n========== $softwareName php extension install Completed! ========\n\n"
 
-/usr/local/php/bin/php -m | grep redis
+/usr/local/php/bin/php -m | grep $extModuleName
 
 printf "============== The End. ==============\n"
